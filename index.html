@@ -70,7 +70,7 @@
             <section>
             <center> <h3 style = 'color: black'> </h3></center>
                 <p>
-                In our piece on US Incarceration, we opened up a public dataset from the <a href = 'http://www.vera.org/'> Vera Institute of Justice</a> to help you explore the trends and realities of whom we currently confine. The simple yet powerful heatmap (replicated below) grounded our investigation. We are fond of heatmaps because they force comparison. You cannot look at one square in a heatmap without exploring those around it too. In a sense, all of the data here works to paint a cohesive picture of the US incerceratory environment. And while you can still see granularity, you get something even deeper out of the sum of the parts. 
+                In our piece on US Incarceration, we opened up a public dataset from the <a href = 'http://www.vera.org/'> Vera Institute of Justice</a> to explore the ealities of whom we confine. The simple, yet powerful, heatmap (replicated below) grounded our investigation. We like heatmaps because they force comparison. You cannot look at one square without exploring those around it. In a sense, all of the data here paints a picture of the US incarceration environment. And while you can still see granularity, you get something  deeper out of the sum of the parts. 
                 </p>
             
             </section>
@@ -82,12 +82,12 @@
         <div class="inner">      
             <section>
                 <p>
-                 But what if you stumble across a dataset that contains two grouping variables (in our case, state and time) and you want to make comparisons on your own? Well, you are in luck. Because we promise it is not as hard as it seems. To make a quick and dirty version of our little chart, all it takes is a spreadsheet like Excel.       
+                 But what if you stumble across a dataset that represents change across groups and time? What if you want to make comparisons on your own? Well, you are in luck. Because we promise it is not as hard as it seems. To make a quick and dirty version of our little chart, all it takes is an Excel spreadsheet.       
                 </p>
                 
                   <h3 style = 'color: black'>  Step 1: The Data</h3>
                  <p>
-                    You can find that <a href = 'https://github.com/vera-institute/incarceration_trends'> linked here </a> at the Vera Institute Github Page. What is GitHub, you ask? It is an open-source software where people can upload resources and collectively work on projects. Basically, your open-data ally. It is actually the powerhouse behind this website! If something is on GitHub, you are welcome and encouraged to download it and explore on your own. In this case, you want to click on the bottom file, incarceration_trends.xlsx, and download it. 
+                    You can find the data <a href = 'https://github.com/vera-institute/incarceration_trends'> linked here </a> at the Vera Institute Github Page. What is GitHub, you ask? It is an open-source software where people can upload resources and collectively work on projects. Basically, your open-data ally. It is actually the powerhouse behind this website! If something is on GitHub, you are welcome and encouraged to download it and explore on your own. You want to click on the bottom file, incarceration_trends.xlsx, and download it. 
                 </p>
             </section>          
         </div> 
@@ -116,7 +116,7 @@
         <div class="inner">  
              <br>
                 <p>
-                    For our heatmap, we need three things. We need the State, we need the Year, and we need the Incarceration Rate which is the number of Incarcerated People per 100,000 people between the ages of 15 and 64 living in the State. But if you look at the spreadsheet and the codebook, you will notice two problems. (1) All of the statistics are reported at the county level and (2) the data does not report the Incarceration Rate. So what can we do? Well, we know that we can, at a minimum, get Incarceration Rate at the county level from the number of incarcerated people and population of the state aged 15 to 64. So we are going to search the codebook for those two variables. It turns out that the number of people in jail in a county is represented by a variable called <strong> <i style = 'color: black'>total_jail_pop</i></strong> and the county population aged 15 to 64 is contained in a variable called <strong> <i style = 'color: black'>total_pop_15to64</i></strong>. Go ahead and click the plus sign at the bottom of the excel sheet to create a black sheet then copy the columns for State, Year, population, and jail population over to the blank sheet. You can do that by clicking on the letter associated with the column at the top of the page and selecting copy from the menu. 
+                    For our heatmap, we need three things. We need the State, we need the Year, and we need the Incarceration Rate which is the number of Incarcerated People per 100,000 residents between the ages of 15 and 64 living in the State. But if you look at the spreadsheet and the codebook, you will notice two problems. (1) All of the statistics are reported at the county level and (2) the data does not report the Incarceration Rate. So what can we do? Well, we know that we can, at a minimum, get Incarceration Rate at the county level from the number of incarcerated people and population of the state aged 15 to 64. So we are going to search the codebook for those two variables. It turns out that the number of people in jail in a county is represented by a variable called <strong> <i style = 'color: black'>total_jail_pop</i></strong> and the county population aged 15 to 64 is contained in a variable called <strong> <i style = 'color: black'>total_pop_15to64</i></strong>. Go ahead and click the plus sign at the bottom of the excel sheet to create a blank sheet then copy the columns for State, Year, population, and jail population over to the blank sheet. You can do that by clicking on the letter associated with the column at the top of the page and selecting copy from the menu. 
                 </p>
         </div>
         
@@ -137,7 +137,7 @@
             <br>
             <h3 style = 'color: black'>  Step 2: Some Quick Calculations</h3>
             <p>
-            So we have county-level population and jail population by year. But we want state-level poulation and jail population by year. So the first thing we are going to do is sort the data. Highlight all four of your columns, go to the data tab, and click the "Sort" button. In the dialogue box that appears, sort first by State and then by Year. 
+             We have county-level population and jail population by year. But we want state-level numbers. We need to add up all the county numbers somehow. The first thing we are going to do is sort the data. Highlight all four of your columns, go to the data tab, and click the "Sort" button. In the dialogue box that appears, sort first by State and then by Year. 
             </p>
         </div>
         
@@ -146,7 +146,7 @@
         <div class="inner">  
             <br>
             <p>
-           You will notice that there is some missing data at the top. Unfortunately, Alaska is not very good about reporting jail populations at the county level! But we can handle that later. From here, we will use the Subtotal button to calculate subtotals for jail population and total population for each state and year. To do this, we need to apply the Subtotal button twice. The first time, we will calculate state subtotals. Highlight all four columns, note that you want calculations to occur at each change in state, you want to add a total for jail population and total population, and you want the summary below the data. Click okay, highlight the columns, and repeat the process. This time, you want to total by each change in year. Make sure that you DO NOT check the box that says <i> Replace current subtotals  </i>. Note this step might take alittle bit of time since excel does not always process large amounts of data quickly. 
+           You will notice that there are some missing data points at the top. Unfortunately, Alaska is not very good about reporting jail populations at the county level! But we can handle that later. From here, we will use the Subtotal button to calculate subtotals for jail population and total population for each state and year. To do this, we need to apply the Subtotal button twice. The first time, we will calculate state subtotals. Highlight all four columns, note that you want calculations to occur at each change in state, you want to add a total for jail population and total population, and you want the summary below the data. Click okay, highlight the columns, and repeat the process. This time, you want to total by each change in year. Make sure that you DO NOT check the box that says <i> Replace current subtotals  </i>. Note this step might take alittle bit of time since excel does not always process large amounts of data quickly. 
             </p>
         </div>
         
@@ -156,7 +156,7 @@
         <div class="inner">  
             <br>
             <p>
-                Now that we have subtotals, you will notice two things. (1) The year subtotals are bolded and have the word "Total" written next to them – this will be useful later. (2) There is no value in the State column next to the year subtotals. We need to fix this issue before we can visualize the data. 
+                Now that we have subtotals, you will notice two things. (1) The year subtotals are bolded and have the word "Total" written next to them – this will be useful later. (2) There are no values in the State column next to the year subtotals. We need to fix this issue before we can visualize the data. 
             </p>
         </div>
         
@@ -166,7 +166,7 @@
         <div class="inner">  
             <br>
             <p>
-                To accomplish this, we are going to create a new column called STATE in column E. Now we are going to use a formula to fill in the holes. We are going to use an IF formula and are going to say "If there is a hole, put the state in from the row above it. If there is not a hole, do not fill the cell". We type the formula in the first cell of the STATE column (cell E2) like this =IF(A2 = "", A1, ""). Then we go hover over cell E2 and double click on the little green square in the bottom right corner to expand that formula to the whole sheet. As a result, we should have state names only for the year total rows. 
+                To accomplish this, we are going to create a new column called STATE in column E. Now we are going to use a formula to fill in the holes. We are going to use an IF formula and are going to say "If there is a hole, put the state from the row above into the hole. If there is not a hole, do not fill the cell". We type the formula in the first cell of the STATE column (cell E2) like this =IF(A2 = "", A1, ""). Then we go hover over cell E2 and double click on the little green square in the bottom right corner to expand that formula to the whole sheet. As a result, we should have state names only for the year total rows. 
                 
             </p>
         </div>
@@ -177,7 +177,7 @@
                 <div class="inner">  
             <br>
             <p>
-                Finally, we are ready for the last step of data preparation – calculating the incarceration rates for each state and year. To do this, we will use another formula. This one is very straight forward. Name column F Incarcaration. Then in the first cell, we are going to divide the total jail population by the state population and multiply by 100,000. It does not matter that there will be errors and that we will also be calculating county incarceration rates. We will filter those out at the very end. The formula should be as follows =C2/D2 *100000. Then, again, double click the green box in the corner of ccell F2. The results should look as follows if you scroll down to Alabama. 
+                Finally, we are ready for the last step of data preparation – calculating the incarceration rates for each state and year. To do this, we will use another formula. This one is very straight forward. Name column F Incarcaration. Then in the first cell, we are going to divide the total jail population by the state population and multiply by 100,000. It does not matter that there will be errors and that we will also be calculating county incarceration rates. We will filter those out at the very end. The formula should be as follows =C2/D2 *100000. Then, again, double click the green box in the corner of cell F2. The results should look as follows if you scroll down to Alabama. 
             </p>
         </div>
         
@@ -225,7 +225,7 @@
         <div class="inner">  
             <br>
             <p>
-               Our final step is to transform this mess of numbers into a picture by adding color. Highlight all of the cells with numbers in them, click on the "Conditional Formatting," go to "Color Scales" and choose the one you like. We prefer the one where green is the lowest value and red is the highest since a higher incarceration rate is not a good thing.  
+               Our final step is to transform this mess of numbers into a picture by adding color. Highlight all of the cells with numbers in them, click on the "Conditional Formatting," go to "Color Scales" and choose the one you like. We prefer the scale where green is the lowest value and red is the highest since a higher incarceration rate is not a good thing.  
             </p>
         </div>
         
@@ -251,11 +251,11 @@
             <br>
             <h3 style = 'color: black'>  Step 4: Interpret Your Creation </h3>
             <p>
-       Adding some interpretation to your work is very important, particularly if you need to clarify data quality issues or limitations. In our case, Alaska, Connecticut, Delaware, Hawaii, Rhode Island, and Vermont all did not report county-level data to the set compiled by the Vera Institute. When we made our Incarceration Trends report, we were able to go through and gather State-Level data from the Vera Institute website but had to do so by hand. In this case, we have not done that. so please be careful not to assume that those states are just doing particularly well. Their data is just mising and you should probably actually just delete or hide those zeroes!
+       Adding some interpretation to your work is important, particularly if you need to clarify data quality issues or limitations. In our case, Alaska, Connecticut, Delaware, Hawaii, Rhode Island, and Vermont all did not report county-level data to the set compiled by the Vera Institute. When we made our Incarceration Trends report, we were able to go through and gather State-Level data from the Vera Institute website. But we did that by hand. So here,  be careful not to assume that those states are just doing particularly well. Their data is just mising. You can just delete or hide those zeroes. 
             </p>
 
             <p>
-                So now, whenever you have data that you think is worth exploring by two other variables to see a trend, think about making a heatmap out of it. You can find all of the resources for this analysis on our Github. And please feel free to contact us if you ever have any questions. 
+                So now, whenever you have data to explore, think about making a heatmap out of it. You can find all of the resources for this analysis on our Github. And please feel free to contact us if you ever have any questions. 
             </p>
         </div>
         
